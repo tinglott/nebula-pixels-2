@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NebulaPixels — Renaissance Cosmic Art Gallery | Galileo & Michelangelo Inspired AI Art</title>
+<meta name="description" content="Museum-quality Renaissance cosmic art prints inspired by Galileo & Michelangelo. Instant digital downloads. 4K resolution. Unique AI-generated celestial art for your home.">
+<meta name="keywords" content="Renaissance cosmic art, Galileo art print, Michelangelo space art, digital download wall art, celestial art print, nebula galaxy print, cosmic wall art, instant download art">
+<meta property="og:title" content="NebulaPixels — Renaissance Cosmic Art Gallery">
+<meta property="og:description" content="Galileo & Michelangelo inspired AI art. Museum-quality prints. Instant digital download.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0a0508;
+  --cream: #f5f0e8;
+  --gold: #c9a84c;
+  --gold-light: #e8c96a;
+  --rose: #c4715a;
+  --teal: #4a9b9b;
+  --mist: #8b9aa8;
+  --card-bg: #0d0d1a;
+  --border: rgba(201,168,76,0.3);
+  --glow: rgba(201,168,76,0.15);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #050510;
+  color: var(--cream);
+  font-family: 'Crimson Text', Georgia, serif;
+  overflow-x: hidden;
+}
+
+/* TOP BANNER */
+.top-banner {
+  background: linear-gradient(90deg, #1a0a30, #0a1a40, #1a0a30);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 20px;
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  color: var(--gold-light);
+  text-transform: uppercase;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 40%, rgba(80,20,140,0.6) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 60%, rgba(20,60,160,0.5) 0%, transparent 55%),
+              radial-gradient(ellipse at 50% 80%, rgba(180,60,80,0.3) 0%, transparent 50%),
+              linear-gradient(180deg, #050510 0%, #0a0520 50%, #050510 100%);
+  z-index: 0;
+}
+
+.stars-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.9) 0%, transparent 100%),
+    radial-gradient(1px 1px at 25% 65%, rgba(255,255,255,0.7) 0%, transparent 100%),
+    radial-gradient(2px 2px at 40% 15%, rgba(255,255,220,0.8) 0%, transparent 100%),
+    radial-gradient(1px 1px at 55% 80%, rgba(255,255,255,0.6) 0%, transparent 100%),
+    radial-gradient(2px 2px at 70% 35%, rgba(255,255,255,0.9) 0%, transparent 100%),
+    radial-gradient(1px 1px at 85% 70%, rgba(255,255,255,0.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 15% 90%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(2px 2px at 92% 10%, rgba(255,255,220,1) 0%, transparent 100%),
+    radial-gradient(1px 1px at 60% 50%, rgba(255,255,255,0.8) 0%, transparent 100%),
+    radial-gradient(1px 1px at 33% 40%, rgba(255,255,255,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 78% 85%, rgba(255,255,255,0.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 5% 55%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(2px 2px at 47% 95%, rgba(255,255,220,0.8) 0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 45%, rgba(255,255,255,0.9) 0%, transparent 100%),
+    radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.6) 0%, transparent 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 3rem 2rem;
+  max-width: 800px;
+}
+
+.store-badge {
+  display: inline-block;
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 6px 20px;
+  border-radius: 50px;
+  margin-bottom: 1.5rem;
+  background: rgba(201,168,76,0.08);
+}
+
+.store-name {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(4rem, 12vw, 8rem);
+  font-weight: 900;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, #fff 70%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.store-tagline {
+  font-size: 1.2rem;
+  color: var(--mist);
+  font-style: italic;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold), #a07a2a);
+  color: #0a0508;
+  border: none;
+  padding: 0.85rem 2rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(201,168,76,0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--gold-light);
+  border: 1.5px solid var(--gold);
+  padding: 0.85rem 2rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.btn-secondary:hover {
+  background: rgba(201,168,76,0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(201,168,76,0.2);
+}
+
+.hero-stats {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  opacity: 0.7;
+}
+
+.hero-stat {
+  text-align: center;
+}
+
+.hero-stat .num {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  display: block;
+}
+
+.hero-stat .label {
+  font-size: 0.8rem;
+  color: var(--mist);
+  letter-spacing: 0.05em;
+}
+
+/* SECTION STYLES */
+section {
+  padding: 5rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 0.8rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--mist);
+  font-style: italic;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* PRODUCT GRID */
+.product-section {
+  background: linear-gradient(180deg, #050510 0%, #0a0a20 50%, #050510 100%);
+  padding: 5rem 2rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold);
+  box-shadow: 0 20px 50px rgba(201,168,76,0.2), 0 0 0 1px var(--border);
+}
+
+.product-img {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-img img {
+  transform: scale(1.05);
+}
+
+.product-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(201,168,76,0.9);
+  color: #0a0508;
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 3px;
+}
+
+.product-info {
+  padding: 1.4rem;
+}
+
+.product-category {
+  font-family: 'Cinzel', serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.5rem;
+}
+
+.product-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--cream);
+  line-height: 1.4;
+  margin-bottom: 0.4rem;
+}
+
+.product-seo {
+  font-size: 0.75rem;
+  color: var(--mist);
+  font-style: italic;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.product-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.product-price {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-right: auto;
+}
+
+.btn-buy {
+  background: linear-gradient(135deg, var(--gold), #a07a2a);
+  color: #0a0508;
+  border: none;
+  padding: 0.55rem 1.1rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.btn-buy:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(201,168,76,0.35);
+}
+
+.btn-print {
+  background: linear-gradient(135deg, #2a5a2a, #3d8b3d);
+  color: #d4edda;
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(100,200,100,0.3);
+  white-space: nowrap;
+}
+.btn-print:hover {
+  background: linear-gradient(135deg, #3d8b3d, #4aa84a);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(60,160,60,0.3);
+}
+.btn-paypal {
+  background: #0070ba;
+  color: white;
+  border: none;
+  padding: 0.55rem 1.1rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.btn-paypal:hover {
+  background: #005ea6;
+  transform: translateY(-1px);
+}
+
+/* NICHE STRATEGY */
+.strategy-section {
+  background: linear-gradient(180deg, #050510, #0a0a20, #050510);
+  padding: 5rem 2rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.strategy-card {
+  background: rgba(201,168,76,0.05);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: border-color 0.3s;
+}
+
+.strategy-card:hover { border-color: var(--gold); }
+
+.strategy-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+
+.strategy-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.strategy-text {
+  font-size: 0.9rem;
+  color: var(--mist);
+  line-height: 1.6;
+}
+
+/* REVENUE SECTION */
+.revenue-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.revenue-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.2rem;
+}
+
+.revenue-card {
+  background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(201,168,76,0.03));
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.revenue-num {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--gold-light);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.revenue-label {
+  font-size: 0.85rem;
+  color: var(--mist);
+  font-style: italic;
+}
+
+/* CHECKLIST */
+.checklist-section {
+  background: linear-gradient(180deg, #050510, #0d0520, #050510);
+  padding: 5rem 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.checklist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 0.8rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 0.8rem 1rem;
+  background: rgba(201,168,76,0.04);
+  border: 1px solid rgba(201,168,76,0.1);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: var(--cream);
+  line-height: 1.4;
+}
+
+.checklist-item::before {
+  content: "✦";
+  color: var(--gold);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* FOOTER */
+footer {
+  background: #020208;
+  border-top: 1px solid var(--border);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.8rem;
+}
+
+.footer-tagline {
+  font-size: 0.9rem;
+  color: var(--mist);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.footer-links a {
+  color: var(--mist);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.05em;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover { color: var(--gold-light); }
+
+.footer-copy {
+  font-size: 0.75rem;
+  color: rgba(139,154,168,0.5);
+  letter-spacing: 0.05em;
+}
+
+/* DIVIDER */
+.gold-divider {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 1.5rem auto;
+}
+
+/* DOWNLOAD BADGE */
+.download-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(74,155,155,0.15);
+  border: 1px solid rgba(74,155,155,0.4);
+  color: var(--teal);
+  font-size: 0.72rem;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 1.2rem;
+}
+
+@media (max-width: 600px) {
+  .product-grid { grid-template-columns: 1fr; }
+  .hero-stats { gap: 1.5rem; }
+  .hero-cta { flex-direction: column; align-items: center; }
+}
+</style>
+</head>
+<body>
+
+<div class="top-banner">
+  ✦ NebulaPixels — Galileo &amp; Michelangelo Inspired Cosmic Art • Instant Digital Downloads • Stripe &amp; PayPal ✦
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="stars-layer"></div>
+  <div class="hero-content">
+    <div class="store-badge">Renaissance Cosmic Gallery</div>
+    <h1 class="store-name">Nebula<br>Pixels</h1>
+    <p class="store-tagline">Galileo &amp; Michelangelo Inspired AI Art — Museum-Quality Prints &amp; Instant Downloads</p>
+    <div class="hero-cta">
+      <a href="#gallery" class="btn-primary">✦ Browse the Gallery</a>
+      <a href="https://buy.stripe.com/aFadR9fI91kNfl077XcQX3p" class="btn-secondary" target="_blank">Buy Now — Stripe</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="num">4K</span><span class="label">Resolution</span></div>
+      <div class="hero-stat"><span class="num">8</span><span class="label">Unique Prints</span></div>
+      <div class="hero-stat"><span class="num">⚡</span><span class="label">Instant Download</span></div>
+      <div class="hero-stat"><span class="num">∞</span><span class="label">Commercial Use</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<div class="product-section" id="gallery">
+  <div class="section-header">
+    <span class="section-eyebrow">The Collection</span>
+    <h2 class="section-title">Renaissance Cosmic Art Prints</h2>
+    <div class="gold-divider"></div>
+    <p class="section-subtitle">Where the telescope of Galileo meets the brush of Michelangelo — cosmic art for the modern connoisseur</p>
+  </div>
+
+  <div class="product-grid">
+
+    <!-- Card 1 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://raw.githubusercontent.com/tinglott/artisy-store/main/nebula-art/cosmic_nebula_galaxy.png" alt="Cosmic Nebula Galaxy Renaissance Print">
+        <div class="product-badge">Best Seller</div>
+      </div>
+      <div class="product-info">
+        <div class="download-badge">⚡ Instant Download</div>
+        <div class="product-category">Wall Art • Digital Download + Physical Print</div>
+        <div class="product-title">Cosmic Nebula Galaxy Print</div>
+        <div class="product-seo">Dark Galaxy Wall Art, Galileo &amp; Michelangelo Style Cosmic Nebula, Celestial Renaissance Poster</div>
+        <div class="product-footer">
+          <div class="product-price">$7.99 <span style="font-size:0.7rem;color:var(--mist)">/ print from $24.99</span></div>
+          <a href="https://buy.stripe.com/aFadR9fI91kNfl077XcQX3p" class="btn-buy" target="_blank">💳 Digital</a>
+          <a href="https://www.paypal.com/qrcodes/managed/6cf0b451-a7bb-4736-986d-632361f97f2c" class="btn-paypal" target="_blank">PayPal</a>
+          <a href="mailto:tinglott@gmail.com?subject=Print Order: Cosmic Nebula Galaxy&body=I'd like to order a physical print of Cosmic Nebula Galaxy. Please send me details!" class="btn-print" target="_blank">🖨️ Order Print</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://raw.githubusercontent.com/tinglott/artisy-store/main/nebula-art/galileo_starfield.png" alt="Galileo's Starfield Deep Space Print">
+        <div class="product-badge">New</div>
+      </div>
+      <div class="product-info">
+        <div class="download-badge">⚡ Instant Download</div>
+        <div class="product-category">Wall Art • Digital Download + Physical Print</div>
+        <div class="product-title">Galileo's Starfield Print</div>
+        <div class="product-seo">Renaissance Heavens Series, Blue Cosmic Galaxy Print, Classical Art Space Wall Decor</div>
+        <div class="product-footer">
+          <div class="product-price">$9.99 <span style="font-size:0.7rem;color:var(--mist)">/ print from $24.99</span></div>
+          <a href="https://buy.stripe.com/dRmbJ13ZrgfH1uacshcQX3q" class="btn-buy" target="_blank">💳 Digital</a>
+          <a href="https://www.paypal.com/qrcodes/managed/6cf0b451-a7bb-4736-986d-632361f97f2c" class="btn-paypal" target="_blank">PayPal</a>
+          <a href="mailto:tinglott@gmail.com?subject=Print Order: Galileo's Starfield&body=I'd like to order a physical print of Galileo's Starfield. Please send me details!" class="btn-print" target="_blank">🖨️ Order Print</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://raw.githubusercontent.com/tinglott/artisy-store/main/nebula-art/michelangelo_cosmos.png" alt="Michelangelo's Cosmos Warm Nebula Print">
+      </div>
+      <div class="product-info">
+        <div class="download-badge">⚡ Instant Download</div>
+        <div class="product-category">Wall Art • Digital Download + Physical Print</div>
+        <div class="product-title">Michelangelo's Cosmos Print</div>
+        <div class="product-seo">Sacred Renaissance Art, Rose Gold Nebula, Celestial Feminine Divine Cosmos Print</div>
+        <div class="product-footer">
+          <div class="product-price">$12.99 <span style="font-size:0.7rem;color:var(--mist)">/ print from $24.99</span></div>
+          <a href="https://buy.stripe.com/9B69AT2Vn2oR8WCdwlcQX3r" class="btn-buy" target="_blank">💳 Digital</a>
+          <a href="https://www.paypal.com/qrcodes/managed/6cf0b451-a7bb-4736-986d-632361f97f2c" class="btn-paypal" target="_blank">PayPal</a>
+          <a href="mailto:tinglott@gmail.com?subject=Print Order: Michelangelo's Cosmos&body=I'd like to order a physical print of Michelangelo's Cosmos. Please send me details!" class="btn-print" target="_blank">🖨️ Order Print</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://raw.githubusercontent.com/tinglott/artisy-store/main/nebula-art/renaissance_aurora.png" alt="Renaissance Aurora Celestial Teal Print">
+        <div class="product-badge">Premium</div>
+      </div>
+      <div class="product-info">
+        <div class="download-badge">⚡ Instant Download</div>
+        <div class="product-category">Wall Art • Digital Download + Physical Print</div>
+        <div class="product-title">Renaissance Aurora Print</div>
+        <div class="product-seo">Sistine Chapel Meets Space, Teal Galaxy Explosion Art, High-End Renaissance Cosmos Poster</div>
+        <div class="product-footer">
+          <div class="product-price">$14.99 <span style="font-size:0.7rem;color:var(--mist)">/ print from $24.99</span></div>
+          <a href="https://buy.stripe.com/6oU28r0Nf9RjegWdwlcQX3s" class="btn-buy" target="_blank">💳 Digital</a>
+          <a href="https://www.paypal.com/qrcodes/managed/6cf0b451-a7bb-4736-986d-632361f97f2c" class="btn-paypal" target="_blank">PayPal</a>
+          <a href="mailto:tinglott@gmail.com?subject=Print Order: Renaissance Aurora&body=I'd like to order a physical print of Renaissance Aurora. Please send me details!" class="btn-print" target="_blank">🖨️ Order Print</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://raw.githubusercontent.com/tinglott/artisy-store/main/nebula-art/celestial_sphere.png" alt="Celestial Sphere Golden Hour Cosmos Print">
+      </div>
+      <div class="product-info">
+        <div class="download-badge">⚡ Instant Download</div>
+        <div class="product-category">Wall Art • Digital Download + Physical Print</div>
+        <div class="product-title">Celestial Sphere Print</div>
+        <div class="product-seo">Cosmic Observatory Art, Green Gold Nebula Print, Galileo Space Art Digital Download</div>
+        <div class="product-footer">
+          <div class="product-price">$7.99 <span style="font-size:0.7rem;color:var(--mist)">/ print from $24.99</span></div>
+          <a href="https://buy.stripe.com/8x23cvanPfbD3CicshcQX3t" class="btn-buy" target="_blank">💳 Digital</a>
+          <a href="https://www.paypal.com/qrcodes/managed/6cf0b451-a7bb-4736-986d-632361f97f2c" class="btn-paypal" target="_blank">PayPal</a>
+          <a href="mailto:tinglott@gmail.com?subject=Print Order: Celestial Sphere&body=I'd like to order a physical print of Celestial Sphere. Please send me details!" class="btn-print" target="_blank">🖨️ Order Print</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://raw.githubusercontent.com/tinglott/artisy-store/main/nebula-art/divine_constellation.png" alt="Divine Constellation Purple Nebula Print">
+      </div>
+      <div class="product-info">
+        <div class="download-badge">⚡ Instant Download</div>
+        <div class="product-category">Wall Art • Digital Download + Physical Print</div>
+        <div class="product-title">Divine Constellation Print</div>
+        <div class="product-seo">Classical Cosmos Series, Purple Galaxy Art, Renaissance Space Wall Art Digital Download</div>
+        <div class="product-footer">
+          <div class="product-price">$9.99 <span style="font-size:0.7rem;color:var(--mist)">/ print from $24.99</span></div>
+          <a href="https://buy.stripe.com/00w8wP1Rj5B31uaeApcQX3u" class="btn-buy" target="_blank">💳 Digital</a>
+          <a href="https://www.paypal.com/qrcodes/managed/6cf0b451-a7bb-4736-986d-632361f97f2c" class="btn-paypal" target="_blank">PayPal</a>
+          <a href="mailto:tinglott@gmail.com?subject=Print Order: Divine Constellation&body=I'd like to order a physical print of Divine Constellation. Please send me details!" class="btn-print" target="_blank">🖨️ Order Print</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 7 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://raw.githubusercontent.com/tinglott/artisy-store/main/nebula-art/cosmic_creation.png" alt="Cosmic Creation Emerald Space Print">
+      </div>
+      <div class="product-info">
+        <div class="download-badge">⚡ Instant Download</div>
+        <div class="product-category">Wall Art • Digital Download + Physical Print</div>
+        <div class="product-title">Cosmic Creation Print</div>
+        <div class="product-seo">Michelangelo Sky Tribute, Warm Amber Nebula, Creation of Universe Renaissance Art Print</div>
+        <div class="product-footer">
+          <div class="product-price">$12.99 <span style="font-size:0.7rem;color:var(--mist)">/ print from $24.99</span></div>
+          <a href="https://buy.stripe.com/7sY8wP1Rj1kNgp43VLcQX3v" class="btn-buy" target="_blank">💳 Digital</a>
+          <a href="https://www.paypal.com/qrcodes/managed/6cf0b451-a7bb-4736-986d-632361f97f2c" class="btn-paypal" target="_blank">PayPal</a>
+          <a href="mailto:tinglott@gmail.com?subject=Print Order: Cosmic Creation&body=I'd like to order a physical print of Cosmic Creation. Please send me details!" class="btn-print" target="_blank">🖨️ Order Print</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 8 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://raw.githubusercontent.com/tinglott/artisy-store/main/nebula-art/nebula_portrait.png" alt="Nebula Portrait Rose Violet Cosmic Print">
+      </div>
+      <div class="product-info">
+        <div class="download-badge">⚡ Instant Download</div>
+        <div class="product-category">Wall Art • Digital Download + Physical Print</div>
+        <div class="product-title">Nebula Portrait Print</div>
+        <div class="product-seo">Renaissance Planetary Art, Blue Aqua Galaxy, Celestial Orbit Digital Download Wall Print</div>
+        <div class="product-footer">
+          <div class="product-price">$9.99 <span style="font-size:0.7rem;color:var(--mist)">/ print from $24.99</span></div>
+          <a href="https://buy.stripe.com/00w6oH0Nf8Nffl01NDcQX3w" class="btn-buy" target="_blank">💳 Digital</a>
+          <a href="https://www.paypal.com/qrcodes/managed/6cf0b451-a7bb-4736-986d-632361f97f2c" class="btn-paypal" target="_blank">PayPal</a>
+          <a href="mailto:tinglott@gmail.com?subject=Print Order: Nebula Portrait&body=I'd like to order a physical print of Nebula Portrait. Please send me details!" class="btn-print" target="_blank">🖨️ Order Print</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- NICHE STRATEGY -->
+<div class="strategy-section">
+  <div class="section-header">
+    <span class="section-eyebrow">Why NebulaPixels</span>
+    <h2 class="section-title">Art That Transcends Time &amp; Space</h2>
+    <div class="gold-divider"></div>
+  </div>
+  <div class="strategy-grid">
+    <div class="strategy-card">
+      <div class="strategy-icon">🔭</div>
+      <div class="strategy-title">Renaissance Meets Cosmos</div>
+      <div class="strategy-text">Our art blends the classical mastery of Galileo and Michelangelo with the awe-inspiring scale of deep space — a genre entirely our own.</div>
+    </div>
+    <div class="strategy-card">
+      <div class="strategy-icon">🎨</div>
+      <div class="strategy-title">Museum-Quality AI Art</div>
+      <div class="strategy-text">Every piece is generated using advanced AI with a trained eye for Renaissance color harmony, golden ratios, and celestial lighting.</div>
+    </div>
+    <div class="strategy-card">
+      <div class="strategy-icon">⚡</div>
+      <div class="strategy-title">Instant Digital Delivery</div>
+      <div class="strategy-text">Purchase and download immediately. High-resolution 4K files suitable for printing at any size, from phone wallpaper to gallery canvas.</div>
+    </div>
+    <div class="strategy-card">
+      <div class="strategy-icon">🏛️</div>
+      <div class="strategy-title">Commercial License Included</div>
+      <div class="strategy-text">Each print includes a personal and small commercial use license. Use in your home, office, or creative projects with confidence.</div>
+    </div>
+    <div class="strategy-card">
+      <div class="strategy-icon">🌌</div>
+      <div class="strategy-title">Exclusive Limited Series</div>
+      <div class="strategy-text">These aren't stock photos. Each piece is a unique composition — no two galleries will ever look the same.</div>
+    </div>
+    <div class="strategy-card">
+      <div class="strategy-icon">💳</div>
+      <div class="strategy-title">Secure Payment</div>
+      <div class="strategy-text">Pay securely via Stripe or PayPal. SSL encrypted checkout. Satisfaction guaranteed — beauty that moves you or your money back.</div>
+    </div>
+  </div>
+</div>
+
+<!-- REVENUE PROJECTIONS -->
+<div class="revenue-section">
+  <div class="section-header">
+    <span class="section-eyebrow">The Gallery Opportunity</span>
+    <h2 class="section-title">Built to Scale</h2>
+    <div class="gold-divider"></div>
+    <p class="section-subtitle">A digital art gallery with zero inventory, instant delivery, and global reach</p>
+  </div>
+  <div class="revenue-grid">
+    <div class="revenue-card">
+      <span class="revenue-num">$0</span>
+      <span class="revenue-label">Inventory Cost</span>
+    </div>
+    <div class="revenue-card">
+      <span class="revenue-num">4K</span>
+      <span class="revenue-label">Print Resolution</span>
+    </div>
+    <div class="revenue-card">
+      <span class="revenue-num">∞</span>
+      <span class="revenue-label">Units Sellable</span>
+    </div>
+    <div class="revenue-card">
+      <span class="revenue-num">95%</span>
+      <span class="revenue-label">Profit Margin</span>
+    </div>
+    <div class="revenue-card">
+      <span class="revenue-num">24/7</span>
+      <span class="revenue-label">Automated Sales</span>
+    </div>
+  </div>
+</div>
+
+<!-- LAUNCH CHECKLIST -->
+<div class="checklist-section">
+  <div class="section-header">
+    <span class="section-eyebrow">Gallery Features</span>
+    <h2 class="section-title">Everything Included</h2>
+    <div class="gold-divider"></div>
+  </div>
+  <div class="checklist-grid">
+    <div class="checklist-item">High-resolution 4K digital art files</div>
+    <div class="checklist-item">Instant download after purchase</div>
+    <div class="checklist-item">Stripe secure checkout</div>
+    <div class="checklist-item">PayPal payment option</div>
+    <div class="checklist-item">Personal + commercial use license</div>
+    <div class="checklist-item">Print-ready JPG &amp; PNG formats</div>
+    <div class="checklist-item">Works for canvas, frame, poster, or wallpaper</div>
+    <div class="checklist-item">Galileo &amp; Michelangelo inspired design</div>
+    <div class="checklist-item">AI-generated — no two alike</div>
+    <div class="checklist-item">New prints added regularly</div>
+    <div class="checklist-item">100% satisfaction guarantee</div>
+    <div class="checklist-item">Email support within 24 hours</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">NebulaPixels</div>
+  <div class="footer-tagline">Where Renaissance Mastery Meets the Infinite Cosmos</div>
+  <div class="footer-links">
+    <a href="#gallery">Gallery</a>
+    <a href="mailto:support@nebula-pixels.art">Contact</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Refund Policy</a>
+  </div>
+  <div class="footer-copy">© 2026 NebulaPixels. All rights reserved. Digital art products are non-refundable after download.</div>
+</footer>
+
+</body>
+</html>
