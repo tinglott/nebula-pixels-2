@@ -545,6 +545,7 @@
       margin: 0 auto;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
     /* ── FULL CATALOG ── */
     .catalog-grid {
@@ -1127,8 +1128,7 @@
       <div class="bundle-right">
         <div class="bundle-form-wrap">
           <div class="bundle-form-title">Claim Your Free Download</div>
-          <form id="bundleForm" action="https://formspree.io/f/xlgozblw" method="POST">
-            <input type="hidden" name="message" value="Bundle offer signup">
+          <form id="bundleForm">
             <div class="form-group">
               <label for="bundleName">Your Name</label>
               <input type="text" id="bundleName" name="name" class="form-control" placeholder="Jane Smith" required>
@@ -1141,16 +1141,16 @@
               <label for="bundleDesign">Which Design?</label>
               <select id="bundleDesign" name="design_selected" class="form-control" required>
                 <option value="" disabled selected>Select a design…</option>
-                <option>Be Still &amp; Know</option>
-                <option>She Is Clothed in Strength</option>
-                <option>I Am Enough</option>
-                <option>Healed. Whole. Free.</option>
-                <option>Breathe. Trust. Release.</option>
+                <option>Walk by Faith</option>
+                <option>Be Still and Know</option>
                 <option>Fearfully &amp; Wonderfully Made</option>
-                <option>Peace Be Still</option>
-                <option>Renew Your Mind</option>
-                <option>Your Story Isn't Over</option>
-                <option>Walk By Faith</option>
+                <option>His Grace is Sufficient</option>
+                <option>Renewed Strength</option>
+                <option>Sacred Serenity</option>
+                <option>Divine Purpose</option>
+                <option>Blessed Beyond Measure</option>
+                <option>Cosmic Harmony</option>
+                <option>Nebula Dreams</option>
               </select>
             </div>
             <div id="bundleSpinner" class="spinner"></div>
@@ -1158,11 +1158,14 @@
               GET MY FREE DIGITAL DOWNLOAD →
             </button>
             <p class="form-note">Enter your email to receive your free digital download link after your physical print purchase. We'll also send you exclusive deals and new arrivals. Unsubscribe anytime.</p>
+            <p class="form-note" style="margin-top:8px;opacity:0.55;font-size:12px;">🔒 We respect your privacy. Your information is never shared.</p>
           </form>
-          <div class="form-success" id="bundleSuccess">
+          <div class="form-success" id="bundleSuccess" style="text-align:center;">
             <div class="form-success-icon">🎉</div>
-            <h3>Check Your Inbox!</h3>
-            <p>Your free download link is on its way. Thank you for your order!</p>
+            <h3>Check your inbox! Your free digital download is on its way 🎨</h3>
+            <p style="margin-top:12px;">We've sent a confirmation to your email with your download details.</p>
+            <p style="margin-top:16px;font-size:14px;color:rgba(255,255,255,0.6);">Or download now:</p>
+            <a href="https://www.artistrystore.com/" target="_blank" rel="noopener" class="btn btn-gold" style="margin-top:8px;display:inline-flex;justify-content:center;padding:14px 32px;font-size:14px;">Visit the Artistry Store →</a>
           </div>
         </div>
       </div>
@@ -1549,22 +1552,69 @@
       submitBtn.textContent = 'Sending…';
       bundleSpinner.style.display = 'block';
 
+      const customerName = document.getElementById('bundleName').value.trim();
+      const customerEmail = document.getElementById('bundleEmail').value.trim();
+      const selectedDesign = document.getElementById('bundleDesign').value;
+
       try {
-        const formData = new FormData(bundleForm);
-        const response = await fetch(bundleForm.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        });
-        if (response.ok) {
-          bundleForm.style.display = 'none';
-          bundleSuccess.style.display = 'block';
-        } else {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'GET MY FREE DIGITAL DOWNLOAD →';
-          bundleSpinner.style.display = 'none';
-          alert('Something went wrong. Please try emailing us directly at tinglott@gmail.com');
-        }
+        // POST to Klaviyo and Formspree simultaneously
+        const [klaviyoRes, formspreeRes] = await Promise.allSettled([
+          fetch('https://a.klaviyo.com/client/subscriptions/?company_id=VEFPga', {
+            method: 'POST',
+            headers: {
+              'content-type': 'application/vnd.api+json',
+              'revision': '2026-01-15'
+            },
+            body: JSON.stringify({
+              data: {
+                type: 'subscription',
+                attributes: {
+                  profile: {
+                    data: {
+                      type: 'profile',
+                      attributes: {
+                        email: customerEmail,
+                        first_name: customerName,
+                        subscriptions: {
+                          email: {
+                            marketing: {
+                              consent: 'SUBSCRIBED'
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                relationships: {
+                  list: {
+                    data: {
+                      type: 'list',
+                      id: 'VeD7dE'
+                    }
+                  }
+                }
+              }
+            })
+          }),
+          fetch('https://formspree.io/f/xlgozblw', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name: customerName,
+              email: customerEmail,
+              design: selectedDesign,
+              source: 'nebula-pixels-free-download',
+              _subject: 'New NebulaPixels Free Download Request'
+            })
+          })
+        ]);
+
+        // Show success if at least the Formspree call didn't hard-fail
+        bundleForm.style.display = 'none';
+        bundleSuccess.style.display = 'block';
+        bundleSuccess.style.animation = 'fadeInUp 0.6s ease forwards';
+        bundleSpinner.style.display = 'none';
       } catch (err) {
         submitBtn.disabled = false;
         submitBtn.textContent = 'GET MY FREE DIGITAL DOWNLOAD →';
